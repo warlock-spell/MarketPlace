@@ -1,14 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>{% block title %} Hardware Hive {% endblock %}</title>
-</head>
+{% include "core/includes/header.html" %}
 <body>
+{% include "core/includes/navbar.html" %}
 <div class="px-6 py-6">
     {% block content %} {% endblock %}
 </div>
+{% include "core/includes/footer.html" %}
 </body>
 </html>
