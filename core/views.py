@@ -21,3 +21,6 @@ def terms(request):
 
 def about(request):
     return render(request, 'core/about.html')
+
+def careers(request):
+    return render(request, 'core/careers.html')
