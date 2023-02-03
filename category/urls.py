@@ -9,5 +9,5 @@ from . import views
 app_name = 'category'
 
 urlpatterns = [
-
+    path('<slug:slug_received>/', views.category_detail, name='category-detail'),
 ]
