@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from item.models import Item, Category
-
+from .forms import SignupForm
 
 # Create your views here.
 
@@ -27,3 +27,7 @@ def about(request):
     return render(request, 'core/about.html')
 
 
+def signup(request):
+    form = SignupForm()
+    context = {'form': form}
+    return render(request, 'core/signup.html', context)
