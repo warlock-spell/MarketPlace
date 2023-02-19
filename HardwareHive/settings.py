@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'item',
     'category',
+    'career',
 ]
 
 MIDDLEWARE = [
