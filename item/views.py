@@ -6,6 +6,12 @@ from .forms import NewItemForm, EditItemForm
 
 # Create your views here.
 
+def browse_items(request):
+    items = Item.objects.filter(is_sold=False)
+    context = {'items': items, }
+    return render(request, 'item/browse-items.html', context)
+
+
 def item_detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
     # fetching related items excluding the current item
