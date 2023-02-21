@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'item',
     'category',
     'career',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
