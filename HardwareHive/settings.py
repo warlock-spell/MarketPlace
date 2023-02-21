@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'category',
     'career',
     'dashboard',
+    'chat',
 ]
 
 MIDDLEWARE = [
