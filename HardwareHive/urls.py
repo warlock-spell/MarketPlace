@@ -24,4 +24,5 @@ urlpatterns = [
     path('item/', include('item.urls'), name='item',),
     path('category/', include('category.urls'), name='category',),
     path('careers/', include('career.urls'), name='career',),
+    path('dashboard/', include('dashboard.urls'), name='dashboard',),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
