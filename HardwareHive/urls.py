@@ -25,4 +25,5 @@ urlpatterns = [
     path('category/', include('category.urls'), name='category',),
     path('careers/', include('career.urls'), name='career',),
     path('dashboard/', include('dashboard.urls'), name='dashboard',),
+    path('inbox/', include('chat.urls'), name='chat',),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
