@@ -11,6 +11,8 @@ from .forms import NewItemForm, EditItemForm
 def browse_items(request):
     query = request.GET.get('query', '')
     category_id = request.GET.get('category', 0)
+    min_price = request.GET.get('min_price', 0.0)
+    max_price = request.GET.get('max_price', 0.0)
     categories = Category.objects.all()
     items = Item.objects.filter(is_sold=False)
 
@@ -20,11 +22,20 @@ def browse_items(request):
     if query:
         items = items.filter(Q(name__icontains=query) | Q(description__icontains=query))
 
+    # the price filters work only when a category is selected
+    if min_price:
+        items = items.filter(price__gte=float(min_price))
+
+    if max_price:
+        items = items.filter(price__lte=float(max_price))
+
     return render(request, 'item/browse-items.html', {
         'items': items,
         'query': query,
         'categories': categories,
-        'category_id': int(category_id)
+        'category_id': int(category_id),
+        'min_price': min_price,
+        'max_price': max_price,
     })
 
 

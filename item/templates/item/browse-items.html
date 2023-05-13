@@ -26,11 +26,24 @@
 
             <hr class="my-6">
 
+            <p class="font-semibold">Price Range</p>
+
+            <form method="get" action="{% url 'item:browse-item' %}">
+                <input name="query" type="hidden" value="{{ query }}">
+                <input name="category" type="hidden" value="{{ category_id }}">
+                <div class="flex">
+                    <input name="min_price" class="w-1/2 py-2 px-4 border rounded-l" type="number" step="0.01" placeholder="Min Price" {% if min_price %}value="{{ min_price }}"{% endif %}>
+                    <input name="max_price" class="w-1/2 py-2 px-4 border rounded-r" type="number" step="0.01" placeholder="Max Price" {% if max_price %}value="{{ max_price }}"{% endif %}>
+                </div>
+                <button class="mt-2 py-4 px-8 text-lg bg-teal-500 text-white rounded-xl">Apply</button>
+            </form>
+
+            <hr class="my-6">
+
             <p class="font-semibold">Clear filters</p>
 
             <ul>
-                <li><a href="{% url 'item:browse-item' %}"
-                       class="mt-2 py-4 px-8 inline-block bg-yellow-500 text-lg rounded-xl text-white">Clear</a>
+                <li><a href="{% url 'item:browse-item' %}" class="mt-2 py-4 px-8 inline-block bg-yellow-500 text-lg rounded-xl text-white">Clear</a></li>
             </ul>
         </div>
 
