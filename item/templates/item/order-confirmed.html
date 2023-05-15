@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Order Confirmed{% endblock %}
+
+{% block content %}
+    <div class="flex items-center justify-center h-screen">
+        <div class="text-center">
+            <img class="mx-auto object-cover h-64 w-64" src="{% static "core/img/tick.png" %}" alt="">
+            <h1 class="text-5xl font-semibold mb-6 text-red-900">Order Placed Successfully</h1>
+            <p class="text-gray-700">Please pay the item price of ${{ item.price }} when the order arrives at your doorstep.</p>
+        </div>
+    </div>
+    <script>
+        // Auto-redirect to the home page after 6 seconds
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 6000);
+    </script>
+{% endblock %}

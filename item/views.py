@@ -94,3 +94,21 @@ def edit_item(request, pk):
         'form': form,
         'title': 'Edit item',
     })
+
+@login_required
+def buy_item(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    if request.method == 'POST':
+        phone = request.POST.get('phone')
+        address = request.POST.get('address')
+        # Save the phone and address to the database or perform any other necessary actions
+        return redirect('item:order-confirmed', pk=pk)
+    else:
+        return redirect('item:item-detail', pk=pk)
+
+@login_required
+def order_confirmed(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    item.is_sold = True
+    item.save()
+    return render(request, 'item/order-confirmed.html', {'item': item})

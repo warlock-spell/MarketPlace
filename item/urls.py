@@ -14,4 +14,6 @@ urlpatterns = [
     path('<int:pk>/edit/', views.edit_item, name='edit-item'),
     path('new/', views.new_item, name='new-item'),
     path('', views.browse_items, name='browse-item'),
-    ]
+    path('buy-item/<int:pk>/', views.buy_item, name='buy-item'),
+    path('order-confirmed/<int:pk>/', views.order_confirmed, name='order-confirmed'),
+]
