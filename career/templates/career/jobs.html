@@ -1,1 +1,14 @@
-Join Us!
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Careers{% endblock %}
+
+{% block content %}
+    <div class="flex items-center justify-center h-screen">
+        <div class="text-center">
+            <h1 class="text-5xl font-semibold mb-6">Join Our Team</h1>
+            <p class="text-gray-700 mb-6">We are always looking for talented individuals to join our team. If you are passionate about technology and want to work in a dynamic and innovative environment, we'd love to hear from you!</p>
+            <p class="text-gray-700 mb-6">To apply, please send your resume and cover letter to <a href="mailto:careers@techswap.com" class="text-blue-500 underline">careers@techswap.com</a>. Be sure to include the position you are applying for in the subject line.</p>
+            <p class="text-gray-700">We look forward to hearing from you!</p>
+        </div>
+    </div>
+{% endblock %}
